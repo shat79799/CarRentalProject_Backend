@@ -3,77 +3,33 @@ package com.demo.model;
 import java.io.Serializable;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
 
 @Data
 @Entity
-@Table(name="cars")
+@Table(name="car")
+@NoArgsConstructor
+@AllArgsConstructor
 @NamedQuery(name="Car.findAll", query="SELECT c FROM Car c")
 public class Car implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
-	private String brand;
-
+	private String name;
+	private int seats;
+	private int doors;
+	private int luggage;
 	private int cc;
+	private String fuel;
+	private int price;
 
-	private String model;
+	@Column(name = "image_path")
+	private String imagePath;
 
-	private int seat;
+	@Column(name = "mileage_fee")
 
-	private int year;
-/*
-	public Car() {
-	}
-
-	public int getId() {
-		return this.id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public String getBrand() {
-		return this.brand;
-	}
-
-	public void setBrand(String brand) {
-		this.brand = brand;
-	}
-
-	public int getCc() {
-		return this.cc;
-	}
-
-	public void setCc(int cc) {
-		this.cc = cc;
-	}
-
-	public String getModel() {
-		return this.model;
-	}
-
-	public void setModel(String model) {
-		this.model = model;
-	}
-
-	public int getSeat() {
-		return this.seat;
-	}
-
-	public void setSeat(int seat) {
-		this.seat = seat;
-	}
-
-	public int getYear() {
-		return this.year;
-	}
-
-	public void setYear(int year) {
-		this.year = year;
-	}
-*/
+	private Double mileageFee;
 }

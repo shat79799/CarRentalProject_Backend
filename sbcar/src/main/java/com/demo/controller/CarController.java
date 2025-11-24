@@ -27,7 +27,7 @@ public class CarController {
 		
 		return ResponseEntity.ok(listData);
 	}
-	
+	/*
 	@GetMapping("/brand/{brand}")
 	public ResponseEntity<List<Car>> findByBrand(@PathVariable("brand")String brand) {
 		List<Car> listData = carRepo.findAll().stream()
@@ -45,4 +45,5 @@ public class CarController {
 		
 		return ResponseEntity.ok(listData);
 	}
+	*/
 }
