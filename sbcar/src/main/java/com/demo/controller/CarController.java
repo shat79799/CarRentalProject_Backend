@@ -16,7 +16,7 @@ import com.demo.model.*;
 
 @CrossOrigin
 @RestController
-@RequestMapping("/api/cars")
+@RequestMapping("/api/car")
 public class CarController {
 	@Autowired
 	private CarRepository carRepo;
@@ -27,23 +27,4 @@ public class CarController {
 		
 		return ResponseEntity.ok(listData);
 	}
-	/*
-	@GetMapping("/brand/{brand}")
-	public ResponseEntity<List<Car>> findByBrand(@PathVariable("brand")String brand) {
-		List<Car> listData = carRepo.findAll().stream()
-				.filter(c -> c.getBrand().equalsIgnoreCase(brand))
-				.collect(Collectors.toList());
-		
-		return ResponseEntity.ok(listData);
-	}
-	
-	@GetMapping("/model/{model}")
-	public ResponseEntity<List<Car>> findByModel(@PathVariable("model")String model) {
-		List<Car> listData = carRepo.findAll().stream()
-				.filter(c -> c.getModel().equalsIgnoreCase(model))
-				.collect(Collectors.toList());
-		
-		return ResponseEntity.ok(listData);
-	}
-	*/
 }
